@@ -6,3 +6,5 @@
     div.textContent = 'hello, world';
     document.body.appendChild(div);
 })();
+
+// Test
