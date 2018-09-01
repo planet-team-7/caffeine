@@ -10,11 +10,13 @@ onload = function startAnimation() {
 
     setInterval(function(){
         userSpeed = localStorage.getItem('recent_count');
+        if (userSpeed == 0) userSpeed = 1;
+        
         console.log(">>>", userSpeed);
 
-        bugSpeed = 1 / userSpeed * 1000 // 100~15
-        developerSpeed = 1 / userSpeed * 2000 // 200~30
-        bgSpeed = 1 / userSpeed * 200 // 20~3
+        bugSpeed = 1 / userSpeed * 500
+        developerSpeed = 1 / userSpeed * 1000
+        bgSpeed = 1 / userSpeed * 100
     }, 500);
 
     var bugFrames = document.getElementById("bug").children;

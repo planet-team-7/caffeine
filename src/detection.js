@@ -73,11 +73,15 @@ class KeyInputCounter{
 
 var counter = null;
 
-function update(){
-    const now = Date.now();
-    const count = counter.getCount(now);
-    localStorage.setItem('recent_count', count);
+function updateData(){
+    if (counter) {
+        console.log("업데이트 되었습니다.");
+        const now = Date.now();
+        const count = counter.getCount(now);
+        localStorage.setItem('recent_count', count);
+    }
 }
+setInterval(updateData, 1000);
 
 // 키 눌렀을 때 이벤트
 function detectKeyDown(){
