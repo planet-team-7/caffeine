@@ -17,7 +17,8 @@
     }
   ],
   "web_accessible_resources": [
-    "detection.js"
+    "detection.js",
+    "animation.html"
   ],
   "browser_action": {
     "default_title": "Inject!",
