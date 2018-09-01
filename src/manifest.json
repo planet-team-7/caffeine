@@ -19,7 +19,16 @@
   ],
   "web_accessible_resources": [
     "detection.js",
-    "animation.html"
+    "animation.html",
+    "img/8bit_background.png",
+    "img/bug_1.png",
+    "img/bug_2.png",
+    "img/bug_3.png",
+    "img/bug_4.png",
+    "img/developer_1.png",
+    "img/developer_2.png",
+    "img/developer_3.png",
+    "img/developer_4.png"
   ],
   "browser_action": {
     "default_title": "Inject!",

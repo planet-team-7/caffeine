@@ -34,20 +34,25 @@ onload = function startAnimation() {
     var developerCnt = 0;
     
     var bg1_left = 0;
-    var bg2_left = 100;
+    var bg2_left = 600;
+    var bg3_left = 1200;
+    var bg4_left = 1800;
 
 
     backgroundLoop = function() {
-        bg1_left--;
-        bg2_left--;
-        if (bg1_left <= -100) {
-            bg1_left = 100;
-        }
-        if (bg2_left <= -100) {
-            bg2_left = 100;
-        }
-        document.getElementById('bg1').style.left = bg1_left + "%";
-        document.getElementById('bg2').style.left = bg2_left + "%";
+        bg1_left-= 6;
+        bg2_left-= 6;
+        bg3_left-= 6;
+        bg4_left-= 6;
+        if (bg1_left <= -600) bg1_left = 1800;
+        if (bg2_left <= -600) bg2_left = 1800;
+        if (bg3_left <= -600) bg3_left = 1800;
+        if (bg4_left <= -600) bg4_left = 1800;
+        
+        document.getElementById('bg1').style.left = bg1_left + "px";
+        document.getElementById('bg2').style.left = bg2_left + "px";
+        document.getElementById('bg3').style.left = bg3_left + "px";
+        document.getElementById('bg4').style.left = bg4_left + "px";
 
         window.setTimeout(backgroundLoop, bugSpeed);
     }
