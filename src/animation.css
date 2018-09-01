@@ -35,7 +35,7 @@ body {
 #developer {
     width: fit-content;
     position: absolute;
-    left: 250px;
+    left: 450px;
     bottom: 0;
 }
 #developer img {
@@ -43,4 +43,14 @@ body {
 }
 #developer img:first-child {
     display: block;
+}
+
+#developer_infected {
+    width: fit-content;
+    position: absolute;
+    left: 450px;
+    bottom: 0;
+}
+#developer_infected img {
+    display: none;
 }
