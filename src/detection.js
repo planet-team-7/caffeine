@@ -88,8 +88,10 @@ function detectKeyDown(){
     counter.pushKey();
 
     const now = Date.now();
+    const count = counter.getCount(now);
 
-    console.log(counter.getCount(now));
-
+    console.log(count);
+    
     localStorage.setItem('counter', counter.serialize());
+    localStorage.setItem('recent_count', count);
 }
