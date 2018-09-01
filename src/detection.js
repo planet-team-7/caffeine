@@ -2,7 +2,7 @@ class KeyInputCounter{
     
     constructor(){
         this.keyInfoDict = new Map();
-        this.rangeMs = 1000 * 10;
+        this.rangeMs = 1000 * 5;
         this.bottleNeckCount = 1000;
     }
 
@@ -23,7 +23,7 @@ class KeyInputCounter{
     }
 
     pushKey(){
-        
+
         //const now = new Date(2018, 9, 1, 17, 10, 2);
         const now = Date.now();
         const key = this._makeKey(now);

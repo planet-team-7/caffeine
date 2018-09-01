@@ -1,28 +1,21 @@
 onload = function startAnimation() { 
 
+    // get user speed
+    let userSpeed = localStorage.getItem('recent_count');
 
     // init
     let bugSpeed = 50;
     let developerSpeed = 100;
     let bgSpeed = 10;
-    
 
-    document.getElementById('slow').onclick = function(){
-        bugSpeed += 20;
-        developerSpeed += 10;
-        bgSpeed += 2;
-    };
-    document.getElementById('fast').onclick = function(){
-        if (bugSpeed > 20) {
-            bugSpeed -= 20;
-        }
-        if (developerSpeed > 10) {
-            developerSpeed -= 10;
-        }
-        if (bgSpeed > 2) {
-            bgSpeed -= 2;
-        }
-    };
+    setInterval(function(){
+        userSpeed = localStorage.getItem('recent_count');
+        console.log(">>>", userSpeed);
+
+        bugSpeed = 1 / userSpeed * 1000 // 100~15
+        developerSpeed = 1 / userSpeed * 2000 // 200~30
+        bgSpeed = 1 / userSpeed * 200 // 20~3
+    }, 500);
 
     var bugFrames = document.getElementById("bug").children;
     var bugFrameCount = bugFrames.length;
@@ -37,6 +30,8 @@ onload = function startAnimation() {
     var bg2_left = 600;
     var bg3_left = 1200;
     var bg4_left = 1800;
+
+    var bugLeftPos = 50;
 
 
     backgroundLoop = function() {
@@ -59,6 +54,14 @@ onload = function startAnimation() {
     bugLoop = function() {
         bugFrames[bugCnt % bugFrameCount].style.display = "none";
         bugFrames[++bugCnt % bugFrameCount].style.display = "block";
+
+        if (bugSpeed > 300) {
+            if (bugLeftPos < 200) bugLeftPos += bugSpeed / 50;
+            document.getElementById('bug').style.left = bugLeftPos + "px";
+        } else if (bugSpeed < 40) {
+            if (bugLeftPos > -50) bugLeftPos -= 1;
+            document.getElementById('bug').style.left = bugLeftPos + "px";
+        }
 
         window.setTimeout(bugLoop, bugSpeed);
     }
