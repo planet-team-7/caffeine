@@ -11,7 +11,7 @@ onload = function startAnimation() {
 
     setInterval(function(){
         userSpeed = localStorage.getItem('recent_count');
-        if (userSpeed == 0) userSpeed = 1;
+        if (!userSpeed || userSpeed == 0) userSpeed = 1;
         
         console.log(">>>", userSpeed);
 
