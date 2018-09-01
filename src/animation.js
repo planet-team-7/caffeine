@@ -1,28 +1,24 @@
 onload = function startAnimation() { 
 
+    // get user speed
+    let userSpeed = localStorage.getItem('recent_count');
 
     // init
     let bugSpeed = 50;
     let developerSpeed = 100;
     let bgSpeed = 10;
-    
 
-    document.getElementById('slow').onclick = function(){
-        bugSpeed += 20;
-        developerSpeed += 10;
-        bgSpeed += 2;
-    };
-    document.getElementById('fast').onclick = function(){
-        if (bugSpeed > 20) {
-            bugSpeed -= 20;
-        }
-        if (developerSpeed > 10) {
-            developerSpeed -= 10;
-        }
-        if (bgSpeed > 2) {
-            bgSpeed -= 2;
-        }
-    };
+    setInterval(function(){
+        userSpeed = localStorage.getItem('recent_count');
+        console.log(">>>", userSpeed);
+
+        //임시
+        userSpeed *= 10;
+
+        bugSpeed = 1 / userSpeed * 1000 // 100~15
+        developerSpeed = 1 / userSpeed * 2000 // 200~30
+        bgSpeed = 1 / userSpeed * 200 // 20~3
+    }, 500);
 
     var bugFrames = document.getElementById("bug").children;
     var bugFrameCount = bugFrames.length;

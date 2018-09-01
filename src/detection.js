@@ -71,27 +71,27 @@ class KeyInputCounter{
     }
 }
 
+var counter = null;
 
 // 키 눌렀을 때 이벤트
 function detectKeyDown(){
     console.log("키가 눌렸습니다.");
 
-    if(localStorage.getItem('counter') === null) {
-
-        const counter = new KeyInputCounter();
-        counter.pushKey();
-        localStorage.setItem('counter', counter.serialize());
-
-    } else {
-
+    if(counter == null){
+        counter = new KeyInputCounter();
         let counterStr = localStorage.getItem('counter');
-        let counter = new KeyInputCounter();
-        counter.deserialize(counterStr);
-        counter.pushKey();
-
-        const now = Date.now();
-        console.log(counter.getCount(now));
-        
-        localStorage.setItem('counter', counter.serialize());
+        if(counterStr != null) {
+            counter.deserialize(counterStr);
+        }
     }
+
+    counter.pushKey();
+
+    const now = Date.now();
+    const count = counter.getCount(now);
+
+    console.log(count);
+    
+    localStorage.setItem('counter', counter.serialize());
+    localStorage.setItem('recent_count', count);
 }
