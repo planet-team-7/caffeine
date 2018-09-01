@@ -54,9 +54,6 @@ class KeyInputCounter{
 
 //     const serialzed = JSON.stringify(km);
 
-//     //var kmJson = JSON.parse(serialzed);
-//     //console.log(kmJson);
-
 //     var km2 = new KeyInputCounter();
 //     km2.deserialize(serialzed);
 //     //km2.getCount();
