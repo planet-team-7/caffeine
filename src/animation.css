@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+.abc {
+    color: red;
+}
+
+#playground {
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    position: absolute;
+    border-top: 1px solid black;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.bgImg {
+    position: absolute;
+    width: 100%;
+}
+#animation {
+    width: fit-content;
+    position: absolute;
+    left: 50px;
+    transform: scaleX(-1);
+}
+#animation img {
+    display: none;
+}
+#animation img:first-child {
+    display: block;
+} 
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -2046px 0; }
+}
