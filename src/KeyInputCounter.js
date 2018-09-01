@@ -10,8 +10,7 @@ class KeyInputCounter{
     serialize(){
         let json = {
         }
-        for(let [k, v] of this.keyInfoDict)
-        {
+        for(let [k, v] of this.keyInfoDict){
             json[k] = v;
         }
         return JSON.stringify(json);
