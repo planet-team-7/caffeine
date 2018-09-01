@@ -72,13 +72,18 @@ class KeyInputCounter{
 }
 
 var counter = null;
+var recentCount = null;
 
 function updateData(){
     if (counter) {
         console.log("업데이트 되었습니다.");
         const now = Date.now();
         const count = counter.getCount(now);
-        localStorage.setItem('recent_count', count);
+        console.log(recentCount);
+        if(count != recentCount) {
+            recentCount = count;
+            localStorage.setItem('recent_count', recentCount);
+        }
     }
 }
 setInterval(updateData, 1000);
@@ -98,10 +103,10 @@ function detectKeyDown(){
     counter.pushKey();
 
     const now = Date.now();
-    const count = counter.getCount(now);
+    recentCount = counter.getCount(now);
 
-    console.log(count);
+    console.log(recentCount);
 
     localStorage.setItem('counter', counter.serialize());
-    localStorage.setItem('recent_count', count);
+    localStorage.setItem('recent_count', recentCount);
 }
