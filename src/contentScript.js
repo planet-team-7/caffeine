@@ -1,4 +1,15 @@
-// alert('Reload 할 때마다 뜹니다ㅎㅎ');
+// detectKeyDown 불러오기
+const script = document.createElement('script');
+script.src = chrome.extension.getURL('detection.js');
+script.onload = function() {
+    this.remove();
+}
+(document.head || document.documentElement).appendChild(script);
 
-const textbar = document.getElementById('searchtext');
-textbar.setAttribute('onkeypress', 'alert("키가 눌렸다!")');
+
+// <input> 태그들에 onkeydown 속성 추가
+const inputs = document.getElementsByTagName('input');
+const inputArray = Array.from(inputs);
+inputArray.forEach(function(input){
+    input.setAttribute('onkeydown', 'detectKeyDown();');
+});

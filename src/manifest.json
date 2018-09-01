@@ -16,6 +16,9 @@
       "js": ["contentScript.js"]
     }
   ],
+  "web_accessible_resources": [
+    "detection.js"
+  ],
   "browser_action": {
     "default_title": "Inject!",
     "default_icon": "icon.png",
