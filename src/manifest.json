@@ -13,7 +13,8 @@
   "content_scripts": [
     {
       "matches": ["https://*/*"],
-      "js": ["contentScript.js"]
+      "js": ["contentScript.js", "animation.js"],
+      "css": ["animation.css"]
     }
   ],
   "web_accessible_resources": [
