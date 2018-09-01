@@ -18,27 +18,26 @@ onload = function startAnimation() {
         }
     };
 
-    var frames = document.getElementById("animation").children;
-    var frameCount = frames.length;
+    var bugFrames = document.getElementById("bug").children;
+    var bugFrameCount = bugFrames.length;
+
+    var developerFrames = document.getElementById("developer").children;
+    var developerFrameCount = developerFrames.length;
+
     var i = 0;
+    var j = 0;
 
-    // 페이지의 width
-    var clientWidth = document.documentElement.clientWidth;
-    var characterWidth = document.querySelector('.img1').width;
-    var widthPercent = (clientWidth - characterWidth) / clientWidth * 100;
-
-    window.onresize = function() {
-        clientWidth = document.documentElement.clientWidth;
-        characterWidth = document.querySelector('.img1').width;
-        widthPercent = (clientWidth - characterWidth) / clientWidth * 100;
-    }
+    
     
     var bg1_left = 0;
     var bg2_left = 100;
 
     startLoop = function() {
-        frames[i % frameCount].style.display = "none";
-        frames[++i % frameCount].style.display = "block";
+        bugFrames[i % bugFrameCount].style.display = "none";
+        bugFrames[++i % bugFrameCount].style.display = "block";
+
+        developerFrames[j % developerFrameCount].style.display = "none";
+        developerFrames[++j % developerFrameCount].style.display = "block";
 
         bg1_left--;
         bg2_left--;

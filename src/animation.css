@@ -20,20 +20,29 @@ body {
     position: absolute;
     width: 100%;
 }
-#animation {
+#bug {
     width: fit-content;
     position: absolute;
     left: 50px;
-    transform: scaleX(-1);
+    bottom: 0;
 }
-#animation img {
+#bug img {
     display: none;
 }
-#animation img:first-child {
+#bug img:first-child {
     display: block;
-} 
+}
 
-@-webkit-keyframes slide {
-    from { background-position: 0 0; }
-    to { background-position: -2046px 0; }
+#developer {
+    width: fit-content;
+    position: absolute;
+    left: 250px;
+    bottom: 0;
+    transform: scaleX(-1);
+}
+#developer img {
+    display: none;
+}
+#developer img:first-child {
+    display: block;
 }
