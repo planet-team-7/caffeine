@@ -53,6 +53,6 @@ body {
     display: none;
 }
 
-.yg1 {
-    
+#yg img {
+    position: absolute;
 }

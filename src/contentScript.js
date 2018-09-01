@@ -38,10 +38,12 @@ const htmldata = `
             <div id="developer_infected">
                 <img class="img1" src="${chrome.extension.getURL("img/green_developer.png")}" />
                 <img class="img1" src="${chrome.extension.getURL("img/developer_1.png")}" />
-                <img class="yg1" src="${chrome.extension.getURL("img/yageun_text.png")}" />
-                <img class="yg2" src="${chrome.extension.getURL("img/yageun_text.png")}" />
-                <img class="yg3" src="${chrome.extension.getURL("img/yageun_text.png")}" />
-                <img class="yg4" src="${chrome.extension.getURL("img/yageun_text.png")}" />
+                <div id="yg">
+                    <img src="${chrome.extension.getURL("img/yageun_text.png")}" />
+                    <img src="${chrome.extension.getURL("img/yageun_text.png")}" />
+                    <img src="${chrome.extension.getURL("img/yageun_text.png")}" />
+                    <img src="${chrome.extension.getURL("img/yageun_text.png")}" />
+                </div>
             </div>
         </div>
     `;

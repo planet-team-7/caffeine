@@ -87,6 +87,12 @@ onload = function startAnimation() {
         document.getElementById('developer').style.display="none";
         document.getElementById('developer_infected').style.display="block";
 
+        ygImgs = document.getElementById('yg').children;
+        for (let yg_cnt=0; yg_cnt<4; yg_cnt++) {
+            ygImgs[yg_cnt].style.top = Math.floor(Math.random()*140)-30 + "px";
+            ygImgs[yg_cnt].style.left = Math.floor(Math.random()*170)-50 + "px";
+        }
+
         if (bugLeftPos < 390) {
             developerLoop();
         } else {
