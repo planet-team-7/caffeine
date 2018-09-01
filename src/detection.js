@@ -6,7 +6,7 @@ class KeyInputCounter{
         this.bottleNeckCount = 1000;
     }
 
-    serialize(){
+    serialize(){ 
         let json = {
         }
         for(let [k, v] of this.keyInfoDict){
@@ -71,17 +71,20 @@ class KeyInputCounter{
     }
 }
 
+
+// 키 눌렀을 때 이벤트
 function detectKeyDown(){
     console.log("키가 눌렸습니다.");
 
     if(localStorage.getItem('counter') === null) {
+
         const counter = new KeyInputCounter();
         counter.pushKey();
-
         localStorage.setItem('counter', counter.serialize());
+
     } else {
+
         let counterStr = localStorage.getItem('counter');
-        //console.log(counterStr);
         let counter = new KeyInputCounter();
         counter.deserialize(counterStr);
         counter.pushKey();
