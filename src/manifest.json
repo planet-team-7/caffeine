@@ -1,0 +1,21 @@
+{
+  "name": "chrome-basic-extension",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "크롬 기초 확장 프로그램",
+  "homepage_url": "https://hiseon.me",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
