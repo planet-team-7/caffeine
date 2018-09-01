@@ -11,9 +11,10 @@ body {
     height: 100%;
     bottom: 0;
     position: absolute;
-    border-top: 1px solid black;
+    border-top: 2px solid #aaa;
     margin: 0;
     box-sizing: border-box;
+    display: none;
 }
 
 .bgImg {
@@ -56,3 +57,87 @@ body {
 #yg img {
     position: absolute;
 }
+
+#app {
+    height: 100%;
+}
+#main {
+    border-top: 2px solid #aaa;
+    height: 100%;
+    z-index: 100;
+    padding-top: 70px;
+}
+#main_text {
+    margin: auto;
+    width: fit-content;
+}
+#main_text > img {
+    width: 350px;
+    margin-bottom: 30px;
+}
+#main_text > div > div {
+    display: inline-block;
+    margin-right: 5px;
+    width: 20px;
+}
+#main_text > div > img {
+    height: 20px;
+}
+#main_text > div {
+    cursor: pointer;
+    margin-left: 120px;
+    width: 100px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+#main_text > div:hover {
+    background-color: #1ae515;
+}
+#float_btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+#float_btn img {
+    cursor: pointer;
+    height: 20px;
+    margin-left: 10px;
+}
+
+#letsCoding {
+    position: absolute;
+    top: 80px;
+    left: calc(50% - 100px);
+    z-index: 100;
+    width: 200px;
+}
+
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  @-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+  }
+  .animate-flicker {
+     -webkit-animation: flickerAnimation .5s infinite;
+     -moz-animation: flickerAnimation .5s infinite;
+     -o-animation: flickerAnimation .5s infinite;
+      animation: flickerAnimation .5s infinite;
+  }
+  
+  

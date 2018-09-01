@@ -1,8 +1,44 @@
 onload = function startAnimation() { 
+    var isStarted = false;
+
+    // main btn 
+    document.getElementById('pause').onclick = function(){
+        document.getElementById('main').style.display = "block";
+        document.getElementById('playground').style.display = "none";
+    };
+    document.getElementById('close').onclick = function(){
+        var element = document.getElementById("app");
+        element.parentNode.removeChild(element);
+    };
+    document.getElementById('start').onclick = function(){
+        document.getElementById('main').style.display = "none";
+        document.getElementById('playground').style.display = "block";
+
+        setTimeout(function() {
+            if (!isStarted) {
+                isStarted = true;
+                bugLoop();
+                developerLoop();
+                backgroundLoop();
+            }
+            var element = document.getElementById("letsCoding");
+            if (element) {
+                element.parentNode.removeChild(element);
+            }
+        }, 2000);
+    };
+    document.getElementById('exit').onclick = function(){
+        var element = document.getElementById("app");
+        element.parentNode.removeChild(element);
+    };
 
     // get user speed
     let userSpeed = localStorage.getItem('recent_count');
-    if (!userSpeed || userSpeed == 0) userSpeed = 1;
+    if (!userSpeed) {
+        userSpeed = 1;
+    } else if (userSpeed == 0) {
+        userSpeed = 1;
+    }
 
     // init
     let bugSpeed = 50;
@@ -11,7 +47,11 @@ onload = function startAnimation() {
 
     setInterval(function(){
         userSpeed = localStorage.getItem('recent_count');
-        if (!userSpeed || userSpeed == 0) userSpeed = 1;
+        if (!userSpeed) {
+            userSpeed = 1;
+        } else if (userSpeed == 0) {
+            userSpeed = 1;
+        }
         
         console.log(">>>", userSpeed);
 
@@ -100,7 +140,5 @@ onload = function startAnimation() {
         }
     }
     
-    bugLoop();
-    developerLoop();
-    backgroundLoop();
+    
 } 
