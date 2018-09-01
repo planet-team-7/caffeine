@@ -18,20 +18,20 @@ const htmldata = `
         </div>
         <div id="playground">
             <div id="bgArea">
-                <img class="bgImg" id="bg1" src="img/background.png" />
-                <img class="bgImg" id="bg2" src="img/background.png" />
+                <img class="bgImg" id="bg1" src="${chrome.extension.getURL("img/background.png")}" />
+                <img class="bgImg" id="bg2" src="${chrome.extension.getURL("img/background.png")}" />
             </div>
             <div id="bug"> 
-                <img class="img1" src="img/bug_1.png" />
-                <img class="img1" src="img/bug_2.png" />
-                <img class="img1" src="img/bug_3.png" />
-                <img class="img1" src="img/bug_4.png" />
+                <img class="img1" src="${chrome.extension.getURL("img/bug_1.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/bug_2.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/bug_3.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/bug_4.png")} />
             </div>
             <div id="developer"> 
-                <img class="img1" src="img/developer_1.png" />
-                <img class="img1" src="img/developer_2.png" />
-                <img class="img1" src="img/developer_3.png" />
-                <img class="img1" src="img/developer_4.png" />
+                <img class="img1" src="${chrome.extension.getURL("img/developer_1.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/developer_2.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/developer_3.png")} />
+                <img class="img1" src="${chrome.extension.getURL("img/developer_4.png")} />
             </div>
         </div>
     `;
