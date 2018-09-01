@@ -73,6 +73,12 @@ class KeyInputCounter{
 
 var counter = null;
 
+function update(){
+    const now = Date.now();
+    const count = counter.getCount(now);
+    localStorage.setItem('recent_count', count);
+}
+
 // 키 눌렀을 때 이벤트
 function detectKeyDown(){
     console.log("키가 눌렸습니다.");
@@ -91,7 +97,7 @@ function detectKeyDown(){
     const count = counter.getCount(now);
 
     console.log(count);
-    
+
     localStorage.setItem('counter', counter.serialize());
     localStorage.setItem('recent_count', count);
 }
