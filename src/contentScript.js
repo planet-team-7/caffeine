@@ -35,6 +35,10 @@ const htmldata = `
                 <img class="img1" src="${chrome.extension.getURL("img/developer_3.png")}" />
                 <img class="img1" src="${chrome.extension.getURL("img/developer_4.png")}" />
             </div>
+            <div id="developer_infected">
+                <img class="img1" src="${chrome.extension.getURL("img/green_developer.png")}" />
+                <img class="img1" src="${chrome.extension.getURL("img/developer_1.png")}" />
+            </div>
         </div>
     `;
 
