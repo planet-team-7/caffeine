@@ -1,8 +1,8 @@
 {
-  "name": "chrome-basic-extension",
+  "name": "Tension Up",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "크롬 기초 확장 프로그램",
+  "description": "타자 속도에 반응하는 Live 웹테마 >_<",
   "homepage_url": "https://hiseon.me",
   "background": {
     "scripts": [
