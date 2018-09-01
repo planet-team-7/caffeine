@@ -1,18 +1,14 @@
-// detectKeyDown 불러오기
-const script = document.createElement('script');
-script.src = chrome.extension.getURL('detection.js');
-(document.head || document.documentElement).appendChild(script);
-
-
-// <input> 태그들에 onkeydown 속성 추가
-const inputs = document.getElementsByTagName('input');
-const inputArray = Array.from(inputs);
-inputArray.forEach(function(input){
-    input.setAttribute('onkeydown', 'detectKeyDown();');
-});
-
-const htmldata = `
-    <div class="button">
+<html>
+    <head>
+        <script src="animation.js"></script>
+        <link rel="stylesheet" type="text/css" href="animation.css">
+    </head>
+    <body>
+        Hello World
+        <div class="abc">
+aaa
+        </div>
+        <div class="button">
             <button id="slow">느리게</button>
             <button id="fast">빠르게</button>
         </div>
@@ -34,18 +30,5 @@ const htmldata = `
                 <img class="img1" src="img/developer_4.png" />
             </div>
         </div>
-    `;
-
-    var e  = document.createElement ("div");
-    e.innerHTML = htmldata;
-
-
-e.style.width = '100%';
-e.style.height = '300px';
-e.style.position = 'fixed';
-e.style.bottom = '0';
-e.style.zIndex = '100';
-
-//document.body.insertBefore (iFrame, document.body.lastChild);
-console.log(e);
-document.body.appendChild(e);
+    </body>
+</html>
