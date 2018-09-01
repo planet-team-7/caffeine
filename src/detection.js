@@ -93,5 +93,6 @@ function detectKeyDown(){
         console.log(counter.getCount(now));
         
         localStorage.setItem('counter', counter.serialize());
+        localStorage.setItem('recent_count', counter.getCount(now));
     }
 }

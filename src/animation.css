@@ -22,7 +22,7 @@ body {
 #bug {
     width: fit-content;
     position: absolute;
-    left: 50px;
+    left: 150px;
     bottom: 0;
 }
 #bug img {
@@ -35,7 +35,7 @@ body {
 #developer {
     width: fit-content;
     position: absolute;
-    left: 250px;
+    left: 350px;
     bottom: 0;
 }
 #developer img {

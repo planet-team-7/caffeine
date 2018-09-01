@@ -1,5 +1,7 @@
 onload = function startAnimation() { 
 
+    // get user speed
+    let counterStr = localStorage.getItem('recent_count');
 
     // init
     let bugSpeed = 50;
