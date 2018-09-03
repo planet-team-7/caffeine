@@ -125,10 +125,12 @@ onload = function startAnimation() {
         document.getElementById('developer').style.display="block";
         document.getElementById('developer_infected').style.display="none";
 
-        if (bugLeftPos < 390) {
-            window.setTimeout(developerLoop, developerSpeed);
-        } else {
-            developerInfectedLoop();
+        if(isStarted) {
+            if (bugLeftPos < 390) {
+                window.setTimeout(developerLoop, developerSpeed);
+            } else {
+                developerInfectedLoop();
+            }
         }
     }
     developerInfectedLoop = function() {
@@ -143,12 +145,14 @@ onload = function startAnimation() {
             ygImgs[yg_cnt].style.left = Math.floor(Math.random()*170)-50 + "px";
         }
 
+        if(isStarted) {
             if (bugLeftPos < 390) {
                 developerLoop();
             } else {
                 window.setTimeout(developerInfectedLoop, 100);
             }
         }
+    }
     
     
 } 
