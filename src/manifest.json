@@ -20,7 +20,8 @@
   "web_accessible_resources": [
     "detection.js",
     "animation.html",
-    "img/*"
+    "img/*",
+    "thema/*"
   ],
   "browser_action": {
     "default_title": "Inject!",
