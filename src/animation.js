@@ -5,11 +5,7 @@ onload = function startAnimation() {
     document.getElementById('pause').onclick = function(){
         document.getElementById('main').style.display = "block";
         document.getElementById('playground').style.display = "none";
-        if(isStarted) {
-            isStarted = false;  // 일시정지
-        } else {
-            isStarted = true;
-        }
+        isStarted = false;  // 일시정지
     };
     document.getElementById('close').onclick = function(){
         var element = document.getElementById("app");
@@ -119,7 +115,6 @@ onload = function startAnimation() {
             document.getElementById('bug').style.left = bugLeftPos + "px";
         }
 
-        // window.setTimeout(bugLoop, bugSpeed);
         if(isStarted) {
             window.setTimeout(bugLoop, bugSpeed);
         }
