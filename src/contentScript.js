@@ -4,10 +4,16 @@ script.src = chrome.extension.getURL('detection.js');
 (document.head || document.documentElement).appendChild(script);
 
 
-// <textarea> 태그들에 onkeydown 속성 추가
-const inputs = document.getElementsByTagName('textarea');
+// <textarea>, <input> 태그들에 onkeydown 속성 추가
+const inputs = document.getElementsByTagName('input');
+const textareas = document.getElementsByTagName('textarea');
+
 const inputArray = Array.from(inputs);
-inputArray.forEach(function(input){
+const textareaArray = Array.from(textareas);
+
+const mergedArray = inputArray.concat(textareaArray);
+console.log(">>>", mergedArray);
+mergedArray.forEach(function(input){
     input.setAttribute('onkeydown', 'detectKeyDown();');
 });
 

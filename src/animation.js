@@ -5,6 +5,11 @@ onload = function startAnimation() {
     document.getElementById('pause').onclick = function(){
         document.getElementById('main').style.display = "block";
         document.getElementById('playground').style.display = "none";
+        if(isStarted) {
+            isStarted = false;  // 일시정지
+        } else {
+            isStarted = true;
+        }
     };
     document.getElementById('close').onclick = function(){
         var element = document.getElementById("app");
@@ -115,7 +120,10 @@ onload = function startAnimation() {
             document.getElementById('bug').style.left = bugLeftPos + "px";
         }
 
-        window.setTimeout(bugLoop, bugSpeed);
+        // window.setTimeout(bugLoop, bugSpeed);
+        if(isStarted) {
+            window.setTimeout(bugLoop, bugSpeed);
+        }
     }
     developerLoop = function() {
         developerFrames[developerCnt % developerFrameCount].style.display = "none";
@@ -141,12 +149,12 @@ onload = function startAnimation() {
             ygImgs[yg_cnt].style.left = Math.floor(Math.random()*170)-50 + "px";
         }
 
-        if (bugLeftPos < 390) {
-            developerLoop();
-        } else {
-            window.setTimeout(developerInfectedLoop, 100);
+            if (bugLeftPos < 390) {
+                developerLoop();
+            } else {
+                window.setTimeout(developerInfectedLoop, 100);
+            }
         }
-    }
     
     
 } 
