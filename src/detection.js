@@ -24,7 +24,6 @@ class KeyInputCounter{
 
     pushKey(){
 
-        //const now = new Date(2018, 9, 1, 17, 10, 2);
         const now = Date.now();
         const key = this._makeKey(now);
 
