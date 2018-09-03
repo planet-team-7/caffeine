@@ -97,8 +97,16 @@ onload = function startAnimation() {
         window.setTimeout(backgroundLoop, bugSpeed);
     }
     bugLoop = function() {
+        
         bugFrames[bugCnt % bugFrameCount].style.display = "none";
-        bugFrames[++bugCnt % bugFrameCount].style.display = "block";
+        bugFrames[bugCnt % bugFrameCount].style.display = "block";
+
+        ++bugCnt;
+        if(bugCnt < 0){ // 계속 구동 시 오버플로우로 음수 될 여지 있음
+            bugCount = 0;
+        }
+        
+
         if (bugSpeed > 100) {
             if (bugLeftPos < 400) bugLeftPos += 10;
             document.getElementById('bug').style.left = bugLeftPos + "px";
