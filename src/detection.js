@@ -3,7 +3,7 @@ class KeyInputCounter{
     constructor(){
         this.keyInfoDict = new Map();
         this.rangeMs = 1000 * 5;
-        this.bottleNeckCount = 1000;
+        this.threshold = 1000;
     }
 
     serialize(){ 
@@ -28,7 +28,7 @@ class KeyInputCounter{
         const now = Date.now();
         const key = this._makeKey(now);
 
-        if(this.keyInfoDict.size > this.bottleNeckCount){
+        if(this.keyInfoDict.size > this.threshold){
 
             const minMs = key - this.rangeMs;
             let newDict = new Map();
@@ -76,7 +76,6 @@ var recentCount = null;
 
 function updateData(){
     if (counter) {
-        console.log("업데이트 되었습니다.");
         const now = Date.now();
         const count = counter.getCount(now);
         console.log(recentCount);
@@ -90,7 +89,6 @@ setInterval(updateData, 1000);
 
 // 키 눌렀을 때 이벤트
 function detectKeyDown(){
-    console.log("키가 눌렸습니다.");
 
     if(counter == null){
         counter = new KeyInputCounter();
@@ -104,8 +102,6 @@ function detectKeyDown(){
 
     const now = Date.now();
     recentCount = counter.getCount(now);
-
-    console.log(recentCount);
 
     localStorage.setItem('counter', counter.serialize());
     localStorage.setItem('recent_count', recentCount);
