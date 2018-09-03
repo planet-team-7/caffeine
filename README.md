@@ -1,4 +1,6 @@
 # Run! Developer Run! 타자 속도에 반응하는 Live 웹테마
+![img1](https://user-images.githubusercontent.com/31200182/44994093-fb13ac00-afd7-11e8-9e71-6cd64b0d2a74.png)
+![img2](https://user-images.githubusercontent.com/31200182/44994094-fbac4280-afd7-11e8-844e-c05efb3c6b93.png)
 
 ## 소개
 Run! Developer Run!은 **타자 속도에 반응하는 Live 웹테마**입니다.
