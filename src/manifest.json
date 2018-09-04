@@ -24,7 +24,7 @@
     "thema/*"
   ],
   "browser_action": {
-    "default_title": "Inject!",
+    "default_title": "안녕? 난 김개발이에요",
     "default_icon": "img/app_icon.png",
     "default_popup": "popup.html"
   },
